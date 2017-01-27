@@ -15,8 +15,8 @@
 	</question>
     <question id="profe_003">
 		<type>text</type>
-		<title>Adivina el número secreto... </title>
-		<answer>23</answer>
+		<title>no</title>
+		<answer>si</answer>
 	</question>
     <question id="profe_004">
 		<type>text</type>
