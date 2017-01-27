@@ -8,5 +8,50 @@
 		<title>Adivina el número secreto... </title>
 		<answer>23</answer>
 	</question>
+    <question id="profe_002">
+		<type>text</type>
+		<title>Adivina el número secreto... </title>
+		<answer>23</answer>
+	</question>
+    <question id="profe_003">
+		<type>text</type>
+		<title>Adivina el número secreto... </title>
+		<answer>23</answer>
+	</question>
+    <question id="profe_004">
+		<type>text</type>
+		<title>Adivina el número secreto... </title>
+		<answer>23</answer>
+	</question>
+    <question id="profe_005">
+		<type>text</type>
+		<title>Adivina el número secreto... </title>
+		<answer>23</answer>
+	</question>
+    <question id="profe_006">
+		<type>text</type>
+		<title>Adivina el número secreto... </title>
+		<answer>23</answer>
+	</question>
+    <question id="profe_007">
+		<type>text</type>
+		<title>Adivina el número secreto... </title>
+		<answer>23</answer>
+	</question>
+    <question id="profe_008">
+		<type>text</type>
+		<title>Adivina el número secreto... </title>
+		<answer>23</answer>
+	</question>
+    <question id="profe_009">
+		<type>text</type>
+		<title>Adivina el número secreto... </title>
+		<answer>23</answer>
+	</question>
+    <question id="profe_010">
+		<type>text</type>
+		<title>Adivina el número secreto... </title>
+		<answer>23</answer>
+	</question>
 
 </questions>
