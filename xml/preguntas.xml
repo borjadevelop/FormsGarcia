@@ -11,7 +11,7 @@
     <question id="profe_002">
 		<type>text</type>
 		<title>Adivina el número secreto... </title>
-		<answer>23</answer>
+		<answer>50</answer>
 	</question>
     <question id="profe_003">
 		<type>text</type>
