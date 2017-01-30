@@ -32,5 +32,15 @@ function gestionarXml(dadesXml){
  var xmlDoc = dadesXml.responseXML;
  document.getElementById("title").innerHTML = xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
  secret=parseInt(xmlDoc.getElementsByTagName("answer")[0].childNodes[0].nodeValue);
+ 
+ document.getElementById("selectittle").innerElementByTagName("title")[1].childNotdes[0].nodeValue;
+ 
+ var select = xmlDoc.getElementsByTagName("select")[0];
+ 
+ var option =  xmlDoc.getElementsByTagName("option")[0];
+ option.text = xmlDoc.getElementsByTagName("option")[0].childNodes[0].nodeValue;
+ option.value = "1";
+ select.appendChild(option);
+ 
 }
 
