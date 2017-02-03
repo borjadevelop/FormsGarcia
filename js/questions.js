@@ -24,7 +24,7 @@ window.onload = function(){
    gestionarXml(this);
   }
  };
- xhttp.open("GET", "https://github.com/onesoco/FormsGarcia/blob/master/xml/preguntas.xml", true);
+ xhttp.open("GET", "https://rawgit.com/onesoco/FormsGarcia/master/xml/preguntas.xml", true);
  xhttp.send();
 }
 
