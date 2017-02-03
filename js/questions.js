@@ -44,9 +44,9 @@ function gestionarXml(dadesXml){
  //Recuperamos el título y las opciones, guardamos la respuesta correcta
  var tituloSelect=xmlDoc.getElementsByTagName("title")[1].childNodes[0].nodeValue;
  var opcionesSelect = [];
- var nopt = xmlDoc.getElementById("profe_002").getElementsByTagName('option').length;
+ var nopt = xmlDoc.getElementById("bodatoda002").getElementsByTagName('option').length;
   for (i = 0; i < nopt; i++) { 
-    opcionesSelect[i] = xmlDoc.getElementById("profe_002").getElementsByTagName('option')[i].childNodes[0].nodeValue;
+    opcionesSelect[i] = xmlDoc.getElementById("bodatoda002").getElementsByTagName('option')[i].childNodes[0].nodeValue;
  }
  ponerDatosSelectHtml(tituloSelect,opcionesSelect);
  respuestaSelect=parseInt(xmlDoc.getElementsByTagName("answer")[1].childNodes[0].nodeValue);
@@ -55,14 +55,14 @@ function gestionarXml(dadesXml){
  //Recuperamos el título y las opciones, guardamos las respuestas correctas
  var tituloCheckbox = xmlDoc.getElementsByTagName("title")[2].childNodes[0].nodeValue;
  var opcionesCheckbox = [];
- var nopt = xmlDoc.getElementById("profe_003").getElementsByTagName('option').length;
+ var nopt = xmlDoc.getElementById("bodatoda003").getElementsByTagName('option').length;
  for (i = 0; i < nopt; i++) { 
-    opcionesCheckbox[i]=xmlDoc.getElementById("profe_003").getElementsByTagName('option')[i].childNodes[0].nodeValue;
+    opcionesCheckbox[i]=xmlDoc.getElementById("bodatoda003").getElementsByTagName('option')[i].childNodes[0].nodeValue;
  }  
  ponerDatosCheckboxHtml(tituloCheckbox,opcionesCheckbox);
- var nres = xmlDoc.getElementById("profe_003").getElementsByTagName('answer').length;
+ var nres = xmlDoc.getElementById("bodatoda003").getElementsByTagName('answer').length;
  for (i = 0; i < nres; i++) { 
-  respuestasCheckbox[i]=xmlDoc.getElementById("profe_003").getElementsByTagName("answer")[i].childNodes[0].nodeValue;
+  respuestasCheckbox[i]=xmlDoc.getElementById("bodatoda003").getElementsByTagName("answer")[i].childNodes[0].nodeValue;
  }
 }
 
