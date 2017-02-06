@@ -2,6 +2,7 @@ var formElement=null;
 var numeroSecreto=null;
 var respuestaSelect=null;
 var respuestasCheckbox = [];
+var nota = 0;  //nota de la prueba sobre 3 puntos (hay 3 preguntas)
 
 //**************************************************************************************************** 
 //Después de cargar la página (onload) se definen los eventos sobre los elementos entre otras acciones.
@@ -10,10 +11,11 @@ window.onload = function(){
  //CORREGIR al apretar el botón
  formElement=document.getElementById('myform');
  formElement.onsubmit=function(){
-   borrarCorreccion();
+   inicializar();
    corregirNumber();
    corregirSelect();
-   corregirCheckbox();  
+   corregirCheckbox();
+   presentarNota();   
    return false;
  }
  
@@ -24,7 +26,7 @@ window.onload = function(){
    gestionarXml(this);
   }
  };
- xhttp.open("GET", "https://rawgit.com/onesoco/FormsGarcia/master/xml/preguntas.xml", true);
+ xhttp.open("GET", "xml/preguntas.xml", true);
  xhttp.send();
 }
 
@@ -36,33 +38,33 @@ function gestionarXml(dadesXml){
  
  //NUMBER
  //Recuperamos el título y la respuesta correcta de Input, guardamos el número secreto
- var tituloInput=xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+ var tituloInput=xmlDoc.getElementsByTagName("title")[0].innerHTML;
  ponerDatosInputHtml(tituloInput);
- numeroSecreto=parseInt(xmlDoc.getElementsByTagName("answer")[0].childNodes[0].nodeValue);
+ numeroSecreto=parseInt(xmlDoc.getElementsByTagName("answer")[0].innerHTML);
  
  //SELECT
  //Recuperamos el título y las opciones, guardamos la respuesta correcta
- var tituloSelect=xmlDoc.getElementsByTagName("title")[1].childNodes[0].nodeValue;
+ var tituloSelect=xmlDoc.getElementsByTagName("title")[1].innerHTML;
  var opcionesSelect = [];
  var nopt = xmlDoc.getElementById("bodatoda002").getElementsByTagName('option').length;
   for (i = 0; i < nopt; i++) { 
-    opcionesSelect[i] = xmlDoc.getElementById("bodatoda002").getElementsByTagName('option')[i].childNodes[0].nodeValue;
+    opcionesSelect[i] = xmlDoc.getElementById("bodatoda002").getElementsByTagName('option')[i].innerHTML;
  }
  ponerDatosSelectHtml(tituloSelect,opcionesSelect);
- respuestaSelect=parseInt(xmlDoc.getElementsByTagName("answer")[1].childNodes[0].nodeValue);
+ respuestaSelect=parseInt(xmlDoc.getElementsByTagName("answer")[1].innerHTML);
 
  //CHECKBOX
  //Recuperamos el título y las opciones, guardamos las respuestas correctas
- var tituloCheckbox = xmlDoc.getElementsByTagName("title")[2].childNodes[0].nodeValue;
+ var tituloCheckbox = xmlDoc.getElementsByTagName("title")[2].innerHTML;
  var opcionesCheckbox = [];
  var nopt = xmlDoc.getElementById("bodatoda003").getElementsByTagName('option').length;
  for (i = 0; i < nopt; i++) { 
-    opcionesCheckbox[i]=xmlDoc.getElementById("bodatoda003").getElementsByTagName('option')[i].childNodes[0].nodeValue;
+    opcionesCheckbox[i]=xmlDoc.getElementById("bodatoda003").getElementsByTagName('option')[i].innerHTML;
  }  
  ponerDatosCheckboxHtml(tituloCheckbox,opcionesCheckbox);
  var nres = xmlDoc.getElementById("bodatoda003").getElementsByTagName('answer').length;
  for (i = 0; i < nres; i++) { 
-  respuestasCheckbox[i]=xmlDoc.getElementById("bodatoda003").getElementsByTagName("answer")[i].childNodes[0].nodeValue;
+  respuestasCheckbox[i]=xmlDoc.getElementById("bodatoda003").getElementsByTagName("answer")[i].innerHTML;
  }
 }
 
@@ -70,7 +72,10 @@ function gestionarXml(dadesXml){
 //implementación de la corrección
 function corregirNumber(){
   var s=formElement.elements[0].value;     
-  if (s==numeroSecreto) darRespuestaHtml("P1: Exacto!");
+  if (s==numeroSecreto) {
+   darRespuestaHtml("P1: Exacto!");
+   nota +=1;
+  }
   else {
     if (s>numeroSecreto) darRespuestaHtml("P1: Te has pasado");
     else darRespuestaHtml("P1: Te has quedado corto");
@@ -79,12 +84,15 @@ function corregirNumber(){
 
 function corregirSelect(){
   var sel = formElement.elements[1];  
-  if (sel.selectedIndex==respuestaSelect) darRespuestaHtml("P2: Select correcto");
-  else darRespuestaHtml("P2: Select incorrecto");
+  if (sel.selectedIndex==respuestaSelect) {
+   darRespuestaHtml("P2: Correcto");
+   nota +=1;
+  }
+  else darRespuestaHtml("P2: Incorrecto");
 }
 
 function corregirCheckbox(){
-  var f=document.getElementById('myform');
+  var f=formElement;
   var escorrecta = [];
   for (i = 0; i < f.color.length; i++) {
    if (f.color[i].checked) {
@@ -94,12 +102,13 @@ function corregirCheckbox(){
     }
    } 
   }
-  for (i = 0; i < f.color.length; i++) {
-   
+  for (i = 0; i < f.color.length; i++) {   
    if (f.color[i].checked) {
     if (escorrecta[i]) {
+     nota +=1.0/respuestasCheckbox.length;  //dividido por el número de respuestas correctas   
      darRespuestaHtml("P3: "+i+" correcta");    
     } else {
+     nota -=1.0/respuestasCheckbox.length;  //dividido por el número de respuestas correctas   
      darRespuestaHtml("P3: "+i+" incorrecta");
     }   
    }
@@ -144,14 +153,17 @@ function ponerDatosCheckboxHtml(t,opt){
 //****************************************************************************************************
 //Gestionar la presentación de las respuestas
 function darRespuestaHtml(r){
- var resDiv=document.getElementById('resultadosDiv');
  var p = document.createElement("p");
  var node = document.createTextNode(r);
  p.appendChild(node);
- resDiv.appendChild(p);
+ document.getElementById('resultadosDiv').appendChild(p);
 }
 
-function borrarCorreccion(){
-   var resDiv=document.getElementById('resultadosDiv');
-   resDiv.innerHTML = "";
+function presentarNota(){
+   darRespuestaHtml("Nota: "+nota+" puntos sobre 3");
+}
+
+function inicializar(){
+   document.getElementById('resultadosDiv').innerHTML = "";
+   nota=0.0;
 }
