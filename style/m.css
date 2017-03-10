@@ -1,0 +1,96 @@
+/*CSS DESKTOP*/
+body{ background-color: orange;}
+/*-Div del logo y el titulo-*/
+a{
+    position: absolute;
+    margin: 5%;
+    left: 30%;
+    font-size: 150%;
+    color: black;
+    cursor: default;
+}
+img[type=logo]{
+    padding-left: 5%;
+    margin-top : 1%;
+    width: 25%;
+    height: 25%;
+}
+/*------------------------*/
+h3 { font-size: 100%; color: black;}
+/*----------Texto---------*/
+input[type=text] {
+    width: 50%;
+    padding: 5px 0px;
+    margin: 2px 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 10px;
+    color:blue;
+}
+input[type=text]:focus { background-color: #71D0BF; border: 1px solid #555;}
+/*------------------------*/
+
+/*----------Submit--------*/
+
+input[type=submit]{
+    margin: 50%;
+	background-color: #4CAF50;
+    border: 2px solid transparent;
+    color: white;
+    padding: 16px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+	border-radius: 12px;
+}
+input[type=submit]:hover{
+	background-color: black;
+    border: 2px solid green;
+    color: green;
+    padding: 16px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+	border-radius: 12px;
+}
+/*------------------------*/
+
+form#myform{
+    background-image: url("../img/repeatbox.jpg");
+    background-repeat: repeat;
+    border-radius: 22px;
+    padding: 2%;
+    margin: 2%;
+    border: 2px solid transparent;
+}
+
+select{
+    font-size: 110%;
+    color:blue;
+    background-color:#B8FFF3;
+    cursor:help;
+}
+
+div[type=checkbox]{
+    font: Arial;
+    font-size: 110%;
+    color: blue;
+}
+
+div[type=radio]{
+    font: Arial;
+    font-size: 110%;
+    color: blue;
+}
+
+div#resultadosDiv { display: inline;}
