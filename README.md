@@ -1,5 +1,5 @@
 # Formulario con xPath
-
+---------------------------------------------------------------------------------------------------------------------
 Asignatura: **Lenguaje de Marcas.**
 
 Trabajo de **Toni Garcia**
@@ -17,6 +17,7 @@ Funciones implementadas:
   ---------------------------------------------------------------------------------------------------------------------
   * Se a implementado el xsl en el xml correctamente.
   * Se a añadido el xPath al js y imprime los titulos en el html.
+ ---------------------------------------------------------------------------------------------------------------------
  
  
 Preguntas hechas por: **Dani Aranda, Borja Correa, Dani Rodriguez y Toni Garcia.**
