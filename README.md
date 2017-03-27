@@ -1,14 +1,18 @@
 # Formulario con xPath
 ---------------------------------------------------------------------------------------------------------------------
-Asignatura: **Lenguaje de Marcas.**                                                        Trabajo de **Toni Garcia**
+Asignatura: **Lenguaje de Marcas.**
+
+**Trabajo de **Toni Garcia.**
 
 Funciones implementadas:
 
   * Preguntas de tipo texto.
   * Preguntas de tipo select.
   * Preguntas de tipo checkbox.
-  * Preguntas de tipo radio. (Solucionado el error que hacia que todas las respuestas fueran de solo una pregunta.)
-  * Preguntas de tipo selección multiple.( Solucionado el error que hacia que no aparecieran las opciones.)
+  * Preguntas de tipo radio. 
+  ###### (Solucionado el error que hacia que todas las respuestas fueran de solo una pregunta.)
+  * Preguntas de tipo selección multiple. 
+  ###### (Solucionado el error que hacia que no aparecieran las opciones.)
   ---------------------------------------------------------------------------------------------------------------------
   * El test ya corrige todas las preguntas.
   * Solucionado el error que hacia que el boton "Corregir" actualizara la pagina.
