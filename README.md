@@ -1,8 +1,6 @@
 # Formulario con xPath
 ---------------------------------------------------------------------------------------------------------------------
-Asignatura: **Lenguaje de Marcas.**
-
-Trabajo de **Toni Garcia**
+Asignatura: **Lenguaje de Marcas.**                                                        Trabajo de **Toni Garcia**
 
 Funciones implementadas:
 
