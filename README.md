@@ -10,9 +10,13 @@ Funciones implementadas:
   * Preguntas de tipo select.
   * Preguntas de tipo checkbox.
   * Preguntas de tipo radio. 
-  ###### (Solucionado el error que hacia que todas las respuestas fueran de solo una pregunta.)
+ ``` 
+ (Solucionado el error que hacia que todas las respuestas fueran de solo una pregunta.) 
+ ```
   * Preguntas de tipo selección multiple. 
-  ###### (Solucionado el error que hacia que no aparecieran las opciones.)
+  ```
+  (Solucionado el error que hacia que no aparecieran las opciones.)
+  ```
   ---------------------------------------------------------------------------------------------------------------------
   * El test ya corrige todas las preguntas.
   * Solucionado el error que hacia que el boton "Corregir" actualizara la pagina.
