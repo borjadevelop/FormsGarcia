@@ -21,7 +21,8 @@ Funciones implementadas:
   - [x] Se a añadido el xPath al js y imprime los titulos en el html.
  ---------------------------------------------------------------------------------------------------------------------
  
-  :memo:[**TEST**](https://cdn.rawgit.com/onesoco/FormsGarcia/xPath/index.html)
+  - :memo:[**TEST**](https://cdn.rawgit.com/onesoco/FormsGarcia/xPath/index.html)
+   - :page_facing_up:[**XML**](https://cdn.rawgit.com/onesoco/FormsGarcia/xPath/xml/preguntas.xml)
  
 Preguntas hechas por: 
 - Dani Aranda
